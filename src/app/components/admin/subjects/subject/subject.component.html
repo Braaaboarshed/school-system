@@ -1,0 +1,19 @@
+<div class="outside_table">
+  <h1>Subjects</h1>
+  <button class="add-btn" (click)="openDialog()">Add Subjects</button>
+
+</div>
+<div class="grid"  >
+<div *ngFor="let s of subject">
+  <div class="card">
+    <p> {{ (s.subjectName.length>10)? (s.subjectName | slice:0:6)+'...':(s.subjectName) }}</p>
+    <footer>
+      <i (click)="deleteSubject(s.id)" class="fas fa-solid fa-trash"></i>
+    </footer>
+  </div>
+
+</div>
+
+
+</div>
+

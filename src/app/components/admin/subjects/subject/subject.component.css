@@ -1,0 +1,70 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px;
+width: 70%;
+padding-left: 30px;
+  margin-inline: auto;
+  padding-top: 50px;
+}
+
+.grid div {
+  aspect-ratio: 1/1;
+  overflow: auto;
+  background-color: #bfc1c6;
+  position: relative;
+  border-radius: 20px;
+}
+.outside_table{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 30px;
+
+
+}
+.add-btn{
+  background-color: #0989ab;
+  color: white;
+  border:none;
+  border-radius: 10px;
+}
+.grid div p{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  top: 25%;
+  color: hsl(228, 58%, 32%);
+  border-radius: 10px;
+  left: 23px;
+  border: 3px solid;
+  max-width: 150px;
+  min-width: 150px;
+}
+
+
+body {
+  margin: 24px;
+}
+footer{
+  width: 100%;
+   position: absolute;
+   height: 30px;
+   background-color: #0989ab;
+   bottom: 0;
+}
+footer i{
+  color: rgb(235, 150, 150);
+  position: absolute;
+  right: 50%;
+  margin-top: 10px;
+
+
+}

@@ -1,0 +1,31 @@
+
+<section>
+  <div class="outside_table">
+    <h1>Students</h1>
+    <button class="add-btn" (click)="openDialog()">Add Students</button>
+
+  </div>
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Grade</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let student of students" >
+
+
+
+    <td>{{student.studentName}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.grade}}</td>
+    <td><div class="table__button-group"><a  (click)="view(student,student.id)">View</a><a (click)="edit(student)">Edit</a><a (click)="delete(student)">Delete</a></div></td>
+  </tr>
+
+</table>
+</section>
+
+

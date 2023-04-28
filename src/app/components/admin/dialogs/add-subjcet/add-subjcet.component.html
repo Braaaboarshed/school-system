@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h2 mat-dialog-title>Add Subject form</h2>
+  <mat-dialog-content>
+    <form [formGroup]="form" >
+      <mat-form-field appearance="standard">
+        <mat-label>Subject name</mat-label>
+        <input matInput formControlName="subjectName" />
+      </mat-form-field>
+
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="dialogRef.close(false)" color="primary">
+      Close
+    </button>
+    <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submit()">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</div>

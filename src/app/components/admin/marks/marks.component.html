@@ -1,0 +1,37 @@
+<div class="select-container">
+  <label class="select-label" for="city-select">Select Class</label>
+  <div class="select-wrapper">
+    <select class="select select-single" (change)="getGrades($event.target)" name="city" id="city-select"  >
+      <option value="{{grades}}"  *ngFor="let grades of grades">{{grades}}</option>
+    </select>
+  </div>
+</div>
+
+<section>
+
+  <table>
+    <thead>
+      <tr>
+     <th>Name</th>
+     <th>Email</th>
+     <th>Grade</th>
+     <th>Actions</th>
+
+   </tr>
+ </thead>
+ <tr *ngFor="let student of targetStudents" >
+
+
+
+   <td>{{student.studentName}}</td>
+   <td>{{student.email}}</td>
+   <td>{{student.grade}}</td>
+   <td><div class="table__button-group"><a  (click)="add(student,student.id)">Add</a><a  (click)="look(student.id)">look</a></div></td>
+
+
+ </tr>
+
+</table>
+</section>
+
+

@@ -1,0 +1,116 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sidebar</title>
+
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+        <!--css
+        <link rel="stylesheet" href="./assets/styles/style.css">-->
+
+        <!--js
+        <script src="./assets/scripts/index.js" defer></script>-->
+
+    <!--fontawesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" >
+  </head>
+    <body>
+
+        <!--aside bar-->
+        <nav class="navbar" #navbar>
+            <div class="navbar-container">
+                <!--logo div-->
+                <div class="navbar-logo-div">
+                    <a class="navbar-logo-link" href="#">
+                       <i class="fas fa-shield-dog"></i>
+                    </a>
+                    <button class="navbar-toggler" (click)="open(navbar)"><i class='fas fa-solid fa-bars'></i></button>
+                </div>
+
+                <!--search input-->
+                <input type="search"
+                 class="navbar-search" id="search">
+
+                <!-- <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i> -->
+
+                <!--item list-->
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="menu-link" routerLink="students">
+                            <i class="fas fa-solid fa-users"></i>
+                            <span class="menu-link-text">Students</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" routerLink="subjects">
+                            <i class="fas fa-solid fa-book"></i>
+                            <span class="menu-link-text">Subjects</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" class="menu-link" routerLink="marks">
+                            <i class="fas fa-solid fa-list"></i>
+                            <span class="menu-link-text">Marks</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#">
+                            <i class="fas fa-solid fa-clock"></i>
+                            <span class="menu-link-text">Waiting Request</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!--div user info-->
+            <div class="user-container">
+                <div class="user-info">
+                    <i class="fas fa-solid fa-user-secret"></i>
+                    <div class="user-details">
+                        <h3 class="user-name">Eleanor Pena</h3>
+                        <p class="user-occupation">Veterinary</p>
+                    </div>
+                </div>
+                <a class="logout-btn" href="#">
+                    <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!--dashboard-->
+        <main class="dashboard">
+          <router-outlet></router-outlet>
+        </main>
+    </body>
+</html>
+<!--
+  //elements
+const btnToggler = window.document.querySelector(".navbar-toggler");
+const inputSearch = window.document.querySelector(".navbar-search");
+const iconSearch = window.document.querySelector("#icon-search");
+const navbar = window.document.querySelector(".navbar");
+
+//events
+btnToggler.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+
+inputSearch.addEventListener('click', () => {
+    if(!navbar.classList.contains("active")) {
+        navbar.classList.add('active');
+    }
+});
+
+iconSearch.addEventListener('click', () => {
+    if(!navbar.classList.contains("active")) {
+        navbar.classList.add('active');
+    }
+});
+
+ -->

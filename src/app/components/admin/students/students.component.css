@@ -1,0 +1,121 @@
+body {
+  height: 100vh;
+  min-width: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  color: #5e5e5e;
+  scroll-behavior: smooth;
+}
+.outside_table{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 30px;
+
+
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  min-width: 350px;
+  height: 300px;
+  /* overflow: scroll; */
+  margin: auto;
+}
+
+table {
+  min-width: 875px;
+  border-collapse: collapse;
+  margin-left:  auto;
+  margin-right: auto;
+
+}
+
+thead {
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  background: #f1f1f1;
+}
+
+tr {
+  border-top: 1px solid #e6e6e6;
+}
+
+tr:hover {
+  background-color: #f5f8fc;
+}
+
+td {
+  font-weight: 100;
+}
+
+th, td {
+  padding: 1.25rem 2rem;
+}
+
+.add-btn{
+  background-color: #0989ab;
+  color: white;
+  border:none;
+  border-radius: 10px;
+}
+td:first-child,
+th:first-child {
+  text-align: left;
+}
+
+td:nth-last-child(2),
+th:nth-last-child(2) {
+  text-align: right;
+}
+
+td + td:not(:nth-last-child(2)) {
+  text-align: center;
+}
+
+.table__button-group {
+  visibility: hidden;
+  transition: visibility 0.06s ease-in;
+}
+.table__button-group a {
+  text-decoration: none;
+  color: #0989ab;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.table__button-group a:last-child{
+  color: red;
+}
+.table__button-group a:hover {
+  /* color: #0989ab; */
+  opacity: 0.75;
+}
+.table__button-group a ~ a:before {
+  content: "|";
+  padding: 0 0.35rem;
+}
+
+tr:hover > td .table__button-group {
+  visibility: visible;
+}
+
+@media (max-width: 800px) {
+  .table__button-group {
+    visibility: visible;
+  }
+}
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  text-align: center;
+}

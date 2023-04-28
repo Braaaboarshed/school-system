@@ -1,0 +1,41 @@
+  <div class="div-scroll">
+
+<table style="border:1px solid gray;" *ngIf="!recentMark" >
+ <tr>
+    <th width="100px;">Subject name</th>
+    <th>mark</th>
+    <th>Edit cell</th>
+  </tr>
+  <tr *ngFor="let row of rows let i=index "  >
+
+    <td >
+      <input  type="text" (change)="nameValidator(name)" #name [(ngModel)]="row.name" required />
+    </td>
+    <td>
+      <input type="number" #mark (change)="markValidator(mark)" [(ngModel)]="row.mark" required />
+    </td>
+
+
+
+<td>
+  <i  *ngIf="i !=0 "  (click)="deleteRow(i)" class="fas fa-solid fa-trash"></i>
+
+</td>
+  </tr>
+</table>
+
+
+
+<button (click)="addRow()" mat-raised-button color="primary" [disabled]="(!name && !mark)" >Add row</button>
+
+
+</div>
+
+<mat-dialog-actions>
+  <button mat-raised-button  color="primary">
+    Close
+  </button>
+  <button mat-raised-button color="primary" [disabled]="(!name && !mark)"   (click)="submit()">
+    Save
+  </button>
+</mat-dialog-actions>

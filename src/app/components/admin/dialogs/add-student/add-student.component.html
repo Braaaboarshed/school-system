@@ -1,0 +1,41 @@
+<div class="form-container">
+  <h2 mat-dialog-title>Add student form</h2>
+  <mat-dialog-content>
+    <form [formGroup]="form" >
+      <mat-form-field appearance="standard">
+        <mat-label>Student name</mat-label>
+        <input matInput formControlName="studentName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>password</mat-label>
+        <input matInput formControlName="password" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" hintLabel="grade required">
+        <mat-label>grade</mat-label>
+        <mat-select
+        matNativeControl
+        name="grade"
+         formControlName="grade"
+         >
+          <mat-option *ngFor="let grades of grades"
+          value="{{grades}}" >{{grades}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="dialogRef.close(false)" color="primary">
+      Close
+    </button>
+    <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submit()">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</div>
