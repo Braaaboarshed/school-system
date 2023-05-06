@@ -13,8 +13,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
 
   loginForm!:FormGroup;
-  users:any[]= [];
-  type:string = "students"
+  user:any
   constructor(
     private fb:FormBuilder ,
     private service:LoginService  ,
@@ -23,61 +22,65 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getUsers();
     this.createForm()
+
   }
 
   createForm() {
     this.loginForm = this.fb.group({
-      type:[this.type],
       email:['' , [Validators.required , Validators.email]],
       password:['' , [Validators.required]],
     })
   }
 
 
-  getRole(event:any) {
-    this.type = event.value
-    this.getUsers()
-  }
-  getUsers() {
-    this.service.getUsers(this.type).subscribe((res:any) => {
-      this.users = res
-      console.log(res)
-    })
-  }
 
   submit() {
+    console.log(this.loginForm.value)
+    this.service.getAdmin().subscribe(res=>{
+      this.user = res
 
-
-    let index = this.users.findIndex(item =>
-       item.email == this.loginForm.value.email && item.password == this.loginForm.value.password  )
-    if(index == -1) {
-      this.toaster.error("الايميل او كلمة المرور غير صحيحة" , "" , {
-        disableTimeOut: false,
-        titleClass: "toastr_title",
-        messageClass: "toastr_message",
-        timeOut:5000,
-        closeButton: true,
-      })
-    }else {
-      const model = {
-        username:this.users[index].username,
-        role:this.type,
-        userId:this.users[index].id
+      console.log(this.user[0].password,this.user[0].email)
+      if(this.loginForm.value.password === '1234' && this.loginForm.value.email === 'admin@gmail.com' ){
+        // this.service.user.next(this.user)
+        this.service.setUserToLocalStorage(res)
+            this.toaster.success("login successfully")
+            this.router.navigate(['/dashboard'])
       }
-      this.service.login(model).subscribe(res => {
-        this.service.user.next(res)
-        this.toaster.success("تم تسجيل الدخول بنجاح" , "" , {
-          disableTimeOut: false,
-          titleClass: "toastr_title",
-          messageClass: "toastr_message",
-          timeOut:5000,
-          closeButton: true,
-        })
-        this.router.navigate(['/dashboard'])
-      })
-    }
+      else{
+        this.toaster.error("invalid email or password",'error')
+      }
+
+    })
+
+    // let index = this.users.findIndex(item =>
+    //    item.email == this.loginForm.value.email && item.password == this.loginForm.value.password  )
+    // if(index == -1) {
+    //   this.toaster.error("الايميل او كلمة المرور غير صحيحة" , "" , {
+    //     disableTimeOut: false,
+    //     titleClass: "toastr_title",
+    //     messageClass: "toastr_message",
+    //     timeOut:5000,
+    //     closeButton: true,
+    //   })
+    // }else {
+    //   const model = {
+    //     username:this.users[index].username,
+    //     role:this.type,
+    //     userId:this.users[index].id
+    //   }
+    //   this.service.login(model).subscribe(res => {
+    //     this.service.user.next(res)
+    //     this.toaster.success("تم تسجيل الدخول بنجاح" , "" , {
+    //       disableTimeOut: false,
+    //       titleClass: "toastr_title",
+    //       messageClass: "toastr_message",
+    //       timeOut:5000,
+    //       closeButton: true,
+    //     })
+    //     this.router.navigate(['/dashboard'])
+    //   })
+    // }
 
   }
 

@@ -1,0 +1,27 @@
+<div class="div-scroll">
+
+  <table style="border:1px solid gray;"  >
+   <tr>
+      <th width="100px;">Subject name</th>
+      <th>mark</th>
+    </tr>
+    <tr *ngFor="let student of marks  let i=index "  >
+     
+      <td >
+        <input  type="text"  value="{{student.name}}" />
+
+      </td>
+      <td>
+        <input type="number" value="{{student.mark}}" />
+      </td>
+    </tr>
+  </table>
+ </div>
+
+
+  <mat-dialog-actions>
+    <button mat-raised-button   color="primary">
+      Close
+    </button>
+
+  </mat-dialog-actions>

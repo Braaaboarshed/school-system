@@ -35,6 +35,7 @@ import { SubjectComponent } from './components/admin/subjects/subject/subject.co
 import { AddSubjcetComponent } from './components/admin/dialogs/add-subjcet/add-subjcet.component';
 import { MarksComponent } from './components/admin/marks/marks.component';
 import { AddMarksComponent } from './components/admin/dialogs/add-marks/add-marks.component';
+import { StudentMarkComponent } from './components/admin/dialogs/student-mark/student-mark.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { AddMarksComponent } from './components/admin/dialogs/add-marks/add-mark
     AddSubjcetComponent,
     MarksComponent,
     AddMarksComponent,
+    StudentMarkComponent,
   ],
   imports: [
     BrowserModule,

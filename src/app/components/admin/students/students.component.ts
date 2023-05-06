@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from 'src/app/models/sudent';
 import { StudentsService } from 'src/app/services/students.service';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { AddStudentComponent } from '../dialogs/add-student/add-student.component';

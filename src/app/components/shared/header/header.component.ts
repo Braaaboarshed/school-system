@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  user:any
+  auth:any
+  constructor(
+     private service :LoginService,
+     private router :Router
+     ) { }
 
   ngOnInit(): void {
+    this.service.userObservable.subscribe(res=>{
+      this.user = res[0].name
+      console.log(res)
+    })
+  }
+  logout(){
+    localStorage.removeItem('user')
+    this.service.userSubject.next(null)
+    this.router.navigate(['../'])
+    location.reload()
+
   }
 
 }

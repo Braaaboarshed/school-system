@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { table } from 'console';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MarksService } from 'src/app/services/marks.service';
-import { Student } from 'src/app/models/sudent';
 
 @Component({
   selector: 'app-add-marks',
@@ -31,7 +30,7 @@ export class AddMarksComponent implements OnInit {
     this.rows = [{id:1,name:'',mark:''}];
   }
   ngOnInit(): void {
-    this.getStudentMarks()
+    console.log(this.data.id,this.data.student)
     this.form = this.fb.group({
       subjectName:['',Validators.required],
       mark:['',Validators.required]
@@ -59,7 +58,7 @@ export class AddMarksComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.rows)
+    // console.log(this.rows)
   this.rows.find(item=>{
     if(
       (item.name==='' || item.mark =='')
@@ -67,7 +66,7 @@ export class AddMarksComponent implements OnInit {
     )
       this.valid = false
     })
-this.markServices.addMarks(this.data.name,this.rows).subscribe(res=>{
+this.markServices.addMarks(this.data.student,this.data.id,this.rows).subscribe(res=>{
   console.log(res)
 })
     this.dialogRef.close()
@@ -86,36 +85,6 @@ this.markServices.addMarks(this.data.name,this.rows).subscribe(res=>{
     this.mark = true
   }
 
-  getStudentMarks(){
-    this.markServices.getMark().subscribe(res=>{
-      this.studentMarks = res
-        for(let i in this.studentMarks){
-         let studentObject = this.studentMarks[i]
-         studentObject.map((item:any)=>{
-          if(item.studentId)
-          this.id.push(item.studentId)
 
-        })
-      }
-      this.getTargetStudent()
-    })
-
-
-  }
-
-  getTargetStudent(){
-   let x =  this.id.findIndex((item:any)=>{
-    if( item === this.data.name){
-      for(let i in this.studentMarks){
-        let studentObject = this.studentMarks[i]
-        studentObject.map((item:any)=>{
-         if(item.studentId === this.data.name)
-         this.recentMark = studentObject
-          console.log(this.recentMark)
-       })
-     }
-    }
-    })
-  }
 
 }

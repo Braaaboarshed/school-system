@@ -4,13 +4,6 @@
 
   <h1>Login</h1>
   <form [formGroup]="loginForm">
-  <div class="row">
-    <mat-radio-group (change)="getRole($event)" formControlName="type" >
-      <mat-radio-button value="students"  class="w-25" color="warn">student</mat-radio-button>
-      <mat-radio-button value="teacher" class="w-25" color="warn">teacher</mat-radio-button>
-  </mat-radio-group>
-
-  </div>
 
     <div class="row">
 
@@ -21,8 +14,9 @@
       <label for="password">Password</label>
       <input type="password"  formControlName="password" >
     </div>
-    <a routerLink="/register" color="primary">انشاء حساب ؟</a>
 
     <button (click)="submit()">Login</button>
   </form>
   </div>
+  "email": "admin@gmail.com",
+  "password": "1234"

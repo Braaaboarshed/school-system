@@ -1,102 +1,62 @@
 {
   "students": [
     {
-      "studentName": "dfsdfs",
-      "email": "sf@gmal.com",
-      "password": "sdfs",
-      "grade": "Sixth  grade",
-      "mark": {},
-      "id": 5
-    },
-    {
-      "studentName": "sdfs",
-      "email": "fsdf@gmal.com",
-      "password": "sdfsf",
-      "grade": "fifth  grade",
-      "id": 6
-    },
-    {
-      "studentName": "sfdfs",
-      "email": "sfs@gmail.com",
-      "password": "sdfs",
+      "studentName": "asfa",
+      "email": "sdfs@gmail.com",
+      "password": "sdsdf",
       "grade": "second grade",
-      "id": 7
+      "id": 1,
+      "mark": [
+        {
+          "id": 1,
+          "name": "sdf",
+          "mark": 34
+        },
+        {
+          "id": 2,
+          "name": "sdfs",
+          "mark": 4
+        }
+      ],
+      "marks": [
+        {
+          "id": 1,
+          "name": "sdfs",
+          "mark": 34
+        },
+        {
+          "id": 2,
+          "name": "sdf",
+          "mark": 34
+        },
+        {
+          "id": 3,
+          "name": "sdfa",
+          "mark": 34
+        }
+      ]
     },
     {
-      "studentName": "sdfs",
-      "email": "sfsd@gmail.com",
-      "password": "fsdfsd",
-      "grade": "12th grade",
-      "id": 8
-    },
-    {
-      "0": {
-        "id": 1,
-        "name": "sdfsa",
-        "mark": 3
-      },
-      "1": {
-        "id": 2,
-        "name": "dsfasf",
-        "mark": 3
-      },
-      "id": 10
-    },
-    {
-      "studentName": "sdfs",
-      "email": "dd@gmail.com",
-      "password": "dsfs",
-      "grade": "Sixth  grade",
-      "id": 11
-    },
-    {
-      "studentName": "dssdfsd",
-      "email": "f@gmail.com",
-      "password": "ddf",
-      "grade": "fifth  grade",
-      "id": 12
-    },
-    {
-      "studentName": "ayhamabo ahmed",
-      "email": "student@gmail.com",
-      "password": "1234",
-      "grade": "third grade",
-      "id": 13
-    },
-    {
-      "studentName": "sdfdsf",
-      "email": "dkd@gmail.com",
-      "password": "123",
-      "grade": "fifth  grade",
-      "id": 14
-    },
-    {
-      "studentName": "ghrty",
-      "email": "ksj@gmail.com",
-      "password": "1232",
-      "grade": "fourth grade",
-      "id": 15
-    },
-    {
-      "studentName": "sdfsadf",
-      "email": "sdds@gmail.cpm",
-      "password": "sdfdsfasf",
-      "grade": "12th grade",
-      "id": 17
-    },
-    {
-      "studentName": "vvvvvvvvvvvv",
-      "email": "vvvvvv@gmail.com",
-      "password": "dfasdfasfas",
-      "grade": "12th grade",
-      "id": 18
+      "studentName": "dssf",
+      "email": "sdf@gmail.com",
+      "password": "sdfsf",
+      "grade": "First grade",
+      "id": 2,
+      "marks": [
+        {
+          "id": 1,
+          "name": "math",
+          "mark": 34
+        },
+        {
+          "id": 2,
+          "name": "sdfs",
+          "mark": 34
+        }
+      ]
     }
   ],
   "subjects": [
-    {
-      "subjectName": "math",
-      "id": 1
-    },
     {
       "subjectName": "english",
       "id": 2
@@ -120,6 +80,14 @@
     {
       "subjectName": "programming",
       "id": 7
+    },
+    {
+      "subjectName": "sdfs",
+      "id": 8
+    },
+    {
+      "subjectName": "fsd",
+      "id": 9
     }
   ],
   "teacher": [
@@ -138,17 +106,15 @@
     }
   ],
   "marks": [
-
-
     [
       {
         "id": 1,
-        "name": "sdf",
+        "name": "math",
         "mark": 34
       },
       {
         "id": 2,
-        "name": "sdfs",
+        "name": "history",
         "mark": 34
       },
       {
@@ -158,16 +124,16 @@
     [
       {
         "id": 1,
-        "name": "sdfsf",
+        "name": "arabic",
         "mark": 34
       },
       {
         "id": 2,
-        "name": "sdfsadf",
-        "mark": 34543
+        "name": "camastry",
+        "mark": 34
       },
       {
-        "studentId": 6
+        "studentId": 4
       }
     ]
   ]

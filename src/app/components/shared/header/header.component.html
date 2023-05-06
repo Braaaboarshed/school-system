@@ -6,9 +6,8 @@
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">logout</a></li>
-    
+      <li><a  *ngIf="user"  (click)="logout()" >logout</a></li>
+      <li><a >{{user}}</a></li>
     </ul>
   </nav>
 </header>

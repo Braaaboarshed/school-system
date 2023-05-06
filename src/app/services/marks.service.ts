@@ -10,15 +10,15 @@ export class MarksService {
   constructor(private http:HttpClient) { }
 
 
-  addMarks(studentId:any,marks:any){
-    marks.push({studentId:studentId})
-    return this.http.post('http://localhost:3000/marks',marks)
+  addMarks(student:any,id:any,marks:any){
+    student.marks = marks
+    return this.http.put('http://localhost:3000/students/'+id,student)
   }
 
   getMark(){
     return this.http.get(environment.baseApi+'marks')
   }
-  getStudentMark(markId:any){
-    return this.http.get(environment.baseApi+'marks/studentId')
+  getStudentMark(){
+    return this.http.get(environment.baseApi+'students')
   }
 }

@@ -3,6 +3,7 @@ import { map, pipe } from 'rxjs';
 import { StudentsService } from 'src/app/services/students.service';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { AddMarksComponent } from '../dialogs/add-marks/add-marks.component';
+import { StudentMarkComponent } from '../dialogs/student-mark/student-mark.component';
 
 @Component({
   selector: 'app-marks',
@@ -37,12 +38,12 @@ export class MarksComponent implements OnInit {
     }
     add(student:any,studentId:any){
       const dialogRef = this.dialog.open(AddMarksComponent, {
-        data: {name: studentId },
+        data: {id:studentId,student:student },
       });
     }
-    look(studentId :any){
-      const dialogRef = this.dialog.open(AddMarksComponent, {
-        data: {name: studentId },
+    look(student :any,studentId :any){
+      const dialogRef = this.dialog.open(StudentMarkComponent, {
+        data: {id:studentId,student:student },
       });
 
     }

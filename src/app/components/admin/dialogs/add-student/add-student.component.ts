@@ -30,7 +30,7 @@ grades=[
 
   ngOnInit(): void {
     this. createForm()
-    
+
   }
 
   createForm(){
@@ -38,7 +38,7 @@ grades=[
       studentName:['',[Validators.required]],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required]],
-      grade :['',[Validators.required]]
+      grade :['',[Validators.required]],
 
 
     })
